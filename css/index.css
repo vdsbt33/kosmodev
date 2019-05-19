@@ -1,0 +1,205 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: rgb(214, 214, 214);
+  color: rgb(41, 41, 41);
+  margin: 0;
+}
+
+header {
+  background-color: rgb(41, 44, 47);
+}
+
+header #link_list {
+  padding-left: 300px;
+}
+
+header ul {
+  margin: 0;
+  padding: 9px 0 10px 0;
+  display: block;
+  width: 100%;
+  text-align: left;
+
+  user-select: none;
+  -moz-user-select: none;
+}
+
+header a {
+  display: inline-block;
+  width: auto;
+  padding: 2px 8px;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  list-style: none;
+  color: rgb(249, 238, 121);
+
+  transition: 0.08s ease-out color, 0.08s ease-out background-color, 0.08s ease-out border;
+}
+
+header a:hover {
+  color: rgb(249, 238, 121);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/*
+Identifiers
+*/
+
+#page_title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+  -moz-user-select: none;
+  position: relative;
+  color: #EEE;
+}
+
+#page_title #kosmodev {
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  left: 20px;
+}
+
+#page_title #title {
+  display: inline-block;
+  font-size: 28px;
+  text-align: right;
+}
+
+/*
+Classes
+*/
+
+.footer {
+  padding: 14px 0;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(41, 44, 47);
+}
+
+article {
+  padding: 12px 0;
+}
+
+/* Text */
+.tc_orange {
+  color: rgb(135, 182, 94);
+}
+
+.tc_blue {
+  color: rgb(150, 203, 254);
+}
+
+/* Tooltip */
+
+/* Tooltip container */
+span.tooltip {
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  line-height: 20px;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+  color: rgb(80, 80, 80);
+  background: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  text-shadow: rgba(0, 0, 0, 0.098) 1px 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 2px 0px;
+}
+
+span.tooltip:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #FFFFFF transparent transparent transparent;
+  top: 32px;
+  left: 45px;
+}
+
+/* input */
+input, textarea {
+  padding: 0 6px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(80, 80, 80);
+  width: 100%;
+  border: none;
+  cursor: text;
+  border-radius: 2px;
+  transition: 0.09s ease-in box-shadow;
+}
+
+input[readonly], textarea[readonly] {
+  background-color: rgb(236, 236, 236);
+  border: 1px dashed #00000033;
+}
+
+input:focus[readonly], textarea:focus[readonly] {
+  box-shadow: none;
+}
+
+input {
+  height: 33px;
+}
+
+select {
+  padding: 4px 6px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+select:hover {
+  box-shadow: 0px 0px 3px rgb(150, 203, 254), 0px 0px 3px rgb(150, 203, 254);
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0px 0px 3px rgb(150, 203, 254), 0px 0px 3px rgb(150, 203, 254);
+}
+
+/* button */
+.a_btn {
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 2px;
+  color: rgb(41, 41, 41);
+  padding: 2px 8px 4px 8px;
+  position: relative;
+
+  transition: 0.05s ease-in color, 0.05s ease-in background-color;
+}
+
+.a_btn i {
+  position: absolute;
+  right: 7px;
+  top: 5px;
+}
+
+.a_btn:hover {
+  color: rgb(236, 236, 236);
+  background-color: rgb(41, 41, 41);
+}
+
+.a_btn .text {
+  padding-right: 20px;
+}

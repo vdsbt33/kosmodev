@@ -1,0 +1,71 @@
+<style>
+#frmKeyHabit_Add {
+  display: block;
+  width: 100%;
+}
+
+#frmKeyHabit_Add label {
+  width: 20%;
+  min-width: 75px;
+  text-align: right;
+  display: inline-block;
+  padding-right: 6px;
+}
+
+#frmKeyHabit_Add input, #frmKeyHabit_Add textarea {
+  display: inline-block;
+  width: 100%;
+}
+
+#frmKeyHabit_Add #lblKeyHabit_Title {
+  width: auto;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+}
+
+#frmKeyHabit_Add #txtKeyHabit_Descri {
+  resize: none;
+}
+
+.block {
+  display: flex;
+  margin-top: 8px;
+}
+
+.toolbar {
+  margin-top: 8px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+#frmKeyHabit_Add button {
+  display: inline-block;
+}
+
+#lblKeyHabit_Log {
+  display: block;
+  width: 100%;
+  padding: 0 20%;
+}
+
+</style>
+<script src="/HabiTrack/js/KeyHabit/KeyHabit_Add.js"></script>
+<div id="frmKeyHabit_Add">
+<label id="lblKeyHabit_Title">Add Habit</label>
+  <span class="block">
+    <label id="lblKeyHabit_Name"><b>Name:</b></label>
+    <input id="txtKeyHabit_Name" type="text" required></input>
+  </span>
+  <span class="block">
+    <label id="lblKeyHabit_Descri">Description:</label>
+    <textarea id="txtKeyHabit_Descri" rows="3"></textarea>
+  </span>
+  <span class="toolbar">
+    <button id="btnKeyHabit_Submit">Add</button>
+    <button id="btnKeyHabit_Cancel">Cancel</button>
+  </span>
+  <span id="lblKeyHabit_Log"></span>
+</div>
+

@@ -1,0 +1,24 @@
+table {
+    border: 1px solid rgba(237, 237, 237, 0.2);
+}
+
+#gridKeyHabit {
+    width: 100%;
+}
+
+th {
+    background-color: rgb(237, 237, 237);
+    color: rgb(29, 31, 33);
+    padding: 0 8px;
+    text-align: center;
+}
+
+td {
+    border-bottom: 1px solid rgba(237, 237, 237, 0.2);
+}
+
+
+td:nth-child(1n + 2) {
+    /* padding: 0 8px; */
+    border-left: 1px solid rgba(237, 237, 237, 0.2);
+}

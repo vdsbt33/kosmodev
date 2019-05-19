@@ -1,0 +1,94 @@
+table {
+  cursor: default;
+}
+
+table a {
+    width: auto;
+    line-height: 1;
+    cursor: pointer;
+    margin: 0 5%;
+}
+
+.actioncolumn {
+    text-align: center;
+    cursor: default;
+    display: block;
+    flex-wrap: wrap;
+    flex-flow: row;
+    justify-content: space-evenly;
+    page-break-after: always
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.KeyHabit_ActionButton {
+    font-size: 18px;
+    display: inline-block;
+    cursor: pointer;
+    color: rgba(237, 237, 237, 0.6);
+    transition: 0.07s ease-out color;
+}
+
+.KeyHabit_ActionButton:hover {
+    color: rgba(237, 237, 237, 1);
+}
+
+
+table textarea {
+  height: 48px;
+  max-height: 48px;
+  overflow-y: auto;
+  display: block;
+  resize: none;
+  scroll-behavior: smooth;
+}
+
+table input[readonly], table textarea[readonly] {
+  background-color: #00000000;
+  color: rgb(240, 240, 240);
+  width: 100%;
+  border: none;
+  cursor: default;
+}
+
+table input[type=number]{
+  height: 33px;
+  border-radius: 2px;
+}
+
+/* table input[readonly]:focus, table textarea[readonly]:focus {
+  border: none;
+  box-shadow: transparent;
+} */
+
+table .addrow {
+  height: 48px;
+}
+
+#SearchRow {
+  border: 1px solid rgba(237, 237, 237, 0.2);
+  padding: 4px 0 0px 6px;
+  text-align: left;
+  color: rgb(240, 240, 240);
+  background-color: #00000000;
+}
+
+
+#SearchRow select {
+  margin-left: 8px;
+  display: inline-block;
+}
+#SearchRow input {
+  display: inline-block;
+  width: 200px;
+}
+
+.h_accept:hover {
+  color: #44FF44;
+}
+
+.h_deny:hover {
+  color: #FF4444;
+}
