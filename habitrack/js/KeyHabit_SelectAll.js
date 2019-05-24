@@ -104,6 +104,7 @@ $(document).ready(function(){
       var tempScrollTop = $(window).scrollTop();
       CurrentAction.CurrentActionIndex = 2;
       SetSelectedIndex(index, document.getElementsByClassName('kha_name')[index].value, document.getElementsByClassName('kha_descri')[index].value);
+      toggleChangelog(index);
       // Fields
       document.getElementsByClassName('kha_name')[index].readOnly = false;
       document.getElementsByClassName('kha_descri')[index].readOnly = false;
@@ -129,7 +130,8 @@ $(document).ready(function(){
         // Edit
           var currentName = document.getElementsByClassName('kha_name')[index].value;
           var currentDescri = document.getElementsByClassName('kha_descri')[index].value;
-
+          
+          toggleChangelog(index);
           if (currentName.length > 0){
             $.ajax({
               url: '/habitrack/Private/Controller/MySql/KeyHabit/KeyHabit_Update.php',
@@ -305,6 +307,7 @@ $(document).ready(function(){
 
       SetSelectedIndex(-1);
       CurrentAction.CurrentActionIndex = 0;
+      toggleChangelog(-1);
     }
   }
 
@@ -312,7 +315,6 @@ $(document).ready(function(){
     document.getElementsByClassName('addHabitBtn')[document.getElementsByClassName('addHabitBtn').length - 1].style = 'display: inline-block;';
     document.getElementsByClassName('saveHabitBtn')[document.getElementsByClassName('saveHabitBtn').length - 1].style = 'display: none;';
     document.getElementsByClassName('cancelHabitBtn')[document.getElementsByClassName('cancelHabitBtn').length - 1].style = 'display: none;';
-    
 
     // Other action other than add row
     if (CurrentAction.CurrentActionIndex != 1){
@@ -447,6 +449,47 @@ $(document).ready(function(){
       document.getElementsByClassName('streakResetBtn')[index].style = 'display: none;';
       document.getElementsByClassName('saveHabitBtn')[index].style = 'display: inline-block;';
       document.getElementsByClassName('cancelHabitBtn')[index].style = 'display: inline-block;';
+    }
+  }
+
+  /* Changelog */
+  var isChangelogVisible = false;
+  var lastChangelogRow = -1;
+  function toggleChangelog(selectedRow) {
+      var table = document.getElementById("gridKeyHabit");
+      if (CurrentAction.CurrentActionIndex == 2 && selectedRow >= 0) {
+      var header_row = 1;
+      selectedRow = selectedRow + header_row;
+      if (isChangelogVisible != true){
+        if (lastChangelogRow >= 0){
+          table.deleteRow(lastChangelogRow + 1);
+        }
+        
+        var row = table.insertRow(selectedRow + 1);
+        var cell1 = row.insertCell(0);
+        cell1.colSpan = 6;
+
+        cell1.innerHTML = "Content";
+        isChangelogVisible = true;
+        lastChangelogRow = selectedRow + 1;
+
+      } else {
+        table.deleteRow(lastChangelogRow);
+        isChangelogVisible = false;
+        lastChangelogRow = -1;
+      }
+    } else if (selectedRow == -1){
+      table.deleteRow(lastChangelogRow);
+      isChangelogVisible = false;
+      lastChangelogRow = -1;
+      if (lastChangelogRow != -1 && selectedRow != lastChangelogRow - 1) {
+        toggleChangelog(selectedRow);
+      }
+    } else if (selectedRow == 1) {
+      
+      table.deleteRow(lastChangelogRow);
+      isChangelogVisible = false;
+      lastChangelogRow = -1;
     }
   }
 
