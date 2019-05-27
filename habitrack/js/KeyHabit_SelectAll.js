@@ -467,9 +467,11 @@ $(document).ready(function(){
       
       var row = table.insertRow(selectedRow + 1);
       var cell1 = row.insertCell(0);
+      
       cell1.colSpan = 6;
 
-      cell1.innerHTML = "Content";
+      cell1.id = "selectedChangelog";
+      $("#selectedChangelog").load("/habitrack/Private/Controller/MySql/HabitLog/HabitLog_Select.php?identi=" + document.getElementsByClassName("keyhabit_row")[selectedRow - 1].getAttribute("value"));
       isChangelogVisible = true;
       lastChangelogRow = selectedRow + 1;
 

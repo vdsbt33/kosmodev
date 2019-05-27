@@ -6,45 +6,31 @@
     die("Connection failed. Error: " . mysqli_connect_error());
   }
 
-  $sql = "select stl_identi, stl_kha_identi, stl_action, stl_streak, stl_crdate from hab_strlog where stl_kha_identi = " . $_GET["identi"];
+  $sql = "select stl_identi, stl_kha_identi, stl_action, stl_streak, stl_crdate from hab_strlog where stl_kha_identi = " . $_GET["identi"] . " order by stl_crdate desc;";
   
   $result = mysqli_query($conn, $sql);
   
-  echo "
-  <table id='gridHabitLog'>
+  echo "<div id='habitLog'>
+  <table id='gridHabitLog' style='width: 100%;'>
     <tr>
-      <th style='width: 136px;'>Action</th>
-      <th style='width: 277px'>Name</th>
-      <th style='width: 277px'>Description</th>
-      <th style='width: 63px;'>Streak</th>
-      <th style='width: 177px;'>Creation Date</th>
-      <th style='width: 177px;'>Edit Date</th>
+      <th style='width: 33.33%'>Action</th>
+      <th style='width: 33.33%'>New Streak</th>
+      <th style='width: 33.33%'>Date</th>
     </tr>
   ";
 
   if (mysqli_num_rows($result) > 0){
 
     while ($row = mysqli_fetch_assoc($result)){
-      echo "<td><textarea class='kha_name' readonly  readonly spellcheck='false'>". $row["kha_name"] ."</textarea></td>";
-      echo "<td><textarea class='kha_descri' readonly  readonly spellcheck='false'>". $row["kha_descri"] ."</textarea></td>";
-      echo "<td style='text-align: center;'>" . $row["kha_streak"] . "</td>";
-      echo "<td style='text-align: center;'>" . $row["kha_crdate"] . "</td>";
-      echo "<td style='text-align: center;'>" . $row["kha_eddate"] . "</td></tr>";
+      echo "<td style='text-align: center;'>" . $row["stl_action"] . "</td>";
+      echo "<td style='text-align: center;'>" . $row["stl_streak"] . "</td>";
+      echo "<td style='text-align: center;'>" . $row["stl_crdate"] . "</td></tr>";
     };
+  } else {
+    echo "<td colspan=\"3\">No streak logs avaible to display.</td>";
   }
-  
-  // Add row
-  echo "<tr class='keyhabit_row addrow'><td><span class='actioncolumn'>
-  <a href='javascript:void(0)' class='KeyHabit_ActionButton addHabitBtn'><i class='fa fa-plus' aria-hidden='true'></i></a>
-  <a href='javascript:void(0)' class='KeyHabit_ActionButton saveHabitBtn h_accept' style='display: none;'><i class='fa fa-floppy-o' aria-hidden='true'></i></a>
-  <a href='javascript:void(0)' class='KeyHabit_ActionButton cancelHabitBtn h_deny' style='display: none;'><i class='fa fa-times' aria-hidden='true'></i></a>
-  </span></td>";
-  echo "<td style='width: 25%'><textarea class='newHabit_name' readonly spellcheck='false'></textarea></td>";
-  echo "<td style='width: 25%'><textarea class='newHabit_descri' readonly></textarea></td>";
-  echo "<td style='width: 5%'><input class='newHabit_streak' type='number' min='0' step='1' style=\"visibility: hidden;\" readonly></input></td>";
-  echo "<td></td>";
-  echo "<td></td></tr>";
-  echo "</table>";
+  echo "</tr>";
+  echo "</table></div>";
 
   mysqli_close($conn);
 
