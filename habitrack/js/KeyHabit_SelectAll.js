@@ -374,6 +374,7 @@ $(document).ready(function(){
       
       CurrentAction.CurrentActionIndex = 1;
       SelectedIndex.Index = -1;
+      toggleChangelog(-1);
 
       document.getElementsByClassName('addHabitBtn')[0].style = 'display: none;';
       document.getElementsByClassName('saveHabitBtn')[index].style = 'display: inline-block;';
@@ -460,26 +461,22 @@ $(document).ready(function(){
       if (CurrentAction.CurrentActionIndex == 2 && selectedRow >= 0) {
       var header_row = 1;
       selectedRow = selectedRow + header_row;
-      if (isChangelogVisible != true){
-        if (lastChangelogRow >= 0){
-          table.deleteRow(lastChangelogRow + 1);
-        }
-        
-        var row = table.insertRow(selectedRow + 1);
-        var cell1 = row.insertCell(0);
-        cell1.colSpan = 6;
-
-        cell1.innerHTML = "Content";
-        isChangelogVisible = true;
-        lastChangelogRow = selectedRow + 1;
-
-      } else {
+      if (lastChangelogRow >= 0){
         table.deleteRow(lastChangelogRow);
-        isChangelogVisible = false;
-        lastChangelogRow = -1;
       }
+      
+      var row = table.insertRow(selectedRow + 1);
+      var cell1 = row.insertCell(0);
+      cell1.colSpan = 6;
+
+      cell1.innerHTML = "Content";
+      isChangelogVisible = true;
+      lastChangelogRow = selectedRow + 1;
+
     } else if (selectedRow == -1){
-      table.deleteRow(lastChangelogRow);
+      if (lastChangelogRow >= 0){
+        table.deleteRow(lastChangelogRow);
+      }
       isChangelogVisible = false;
       lastChangelogRow = -1;
       if (lastChangelogRow != -1 && selectedRow != lastChangelogRow - 1) {
