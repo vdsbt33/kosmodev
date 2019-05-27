@@ -32,9 +32,9 @@
           <?php include $_SERVER['DOCUMENT_ROOT']."/HabiTrack/Private/Controller/MySql/KeyHabit/KeyHabit_SelectAll.php"; ?>
         </div>
         <br>
-        <!-- <?php include $_SERVER['DOCUMENT_ROOT']."Shared/Areas/KeyHabit_Add/KeyHabit_Add.html" ?> -->
+        <?php //include $_SERVER['DOCUMENT_ROOT']."/Shared/Areas/KeyHabit_Add/KeyHabit_Add.html" ?>
       </div>
     </article>
-    <!-- <?php include "./Shared/footer.html"; ?> -->
+    <?php include $_SERVER['DOCUMENT_ROOT']."/Shared/footer.html"; ?>
   </body>
 </html>
