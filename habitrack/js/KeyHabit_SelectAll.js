@@ -274,6 +274,7 @@ $(document).ready(function(){
 
   // REMOVE
   var removeButtons = document.getElementsByClassName('removeHabitBtn');
+  var lastDeleteTarget = -1;
   Array.from(removeButtons).forEach(removeHabitBtn_onclick);
 
   function removeHabitBtn_onclick(currentValue, index) {
@@ -292,6 +293,9 @@ $(document).ready(function(){
       document.getElementsByClassName('streakResetBtn')[index].style = 'display: none;';
       document.getElementsByClassName('saveHabitBtn')[index].style = 'display: inline-block;';
       document.getElementsByClassName('cancelHabitBtn')[index].style = 'display: inline-block;';
+
+      document.getElementsByClassName('keyhabit_row')[index].className += " deleteTarget";
+      lastDeleteTarget = index;
     }
   }
   
@@ -338,6 +342,11 @@ $(document).ready(function(){
       
       document.getElementsByClassName('newHabit_name')[0].value = '';
       document.getElementsByClassName('newHabit_descri')[0].value = '';
+    }
+
+    if (lastDeleteTarget >= 0){
+      document.getElementsByClassName('keyhabit_row')[lastDeleteTarget].className = 'keyhabit_row';
+      lastDeleteTarget = -1;
     }
   }
 

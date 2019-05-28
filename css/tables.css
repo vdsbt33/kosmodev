@@ -26,7 +26,7 @@ td {
   border-left: 1px solid rgba(41, 41, 41, 0.2);
 }
 
-#gridHabitLog td:nth-child(1) {
+td:nth-child(1) {
   border: 1px solid rgba(41, 41, 41, 0.0);
 }
 
@@ -44,4 +44,17 @@ td {
 #gridHabitLog {
   height: 100%;
   width: 100%;
+}
+
+#gridHabitLog td:nth-child(1){
+  background-color: rgb(214, 214, 214);
+}
+
+#gridHabitLog td {
+  border: 1px solid rgba(41, 41, 41, 0.2);
+  background-color: rgb(214, 214, 214);
+}
+
+.deleteTarget {
+  background-color: rgba(248, 55, 55, 0.5);
 }
