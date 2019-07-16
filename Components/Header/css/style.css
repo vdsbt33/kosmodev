@@ -1,0 +1,28 @@
+header {
+  background-color: #225;
+  color: #EEE;
+}
+
+header .title {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 0 0 8px 8px;
+}
+
+header nav {
+  padding: 0 4px;
+  display: flex;
+}
+
+header nav a {
+  color: #BB4;
+  display: inline-block;
+  margin: 4px 14px;
+  font-weight: bold;
+  /* background-color: #FFFFFF22; */
+}
+
+header nav a:hover {
+  color: #BBB;
+  text-decoration: none;
+}

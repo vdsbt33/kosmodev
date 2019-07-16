@@ -1,0 +1,3 @@
+<article>
+  HOME page
+</article>

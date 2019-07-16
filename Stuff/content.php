@@ -1,0 +1,3 @@
+<article>
+  STUFF page
+</article>
