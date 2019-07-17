@@ -1,22 +1,29 @@
 <html>
   <head>
     <title>kosmodev</title>
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="stylesheet" href="/Modules/bootstrap/css/bootstrap.min.css">
+    <script src="/Modules/jQuery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="/Modules/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
   </head>
   
   <body>
     <?php
       $root = $_SERVER['DOCUMENT_ROOT'];
-      // $root = '';
       $config_data = json_decode(file_get_contents($root . '/Config/config.json'), true);
 
-      include $root . '/Components/Header/header.php';
+      if (empty($hideHeader))
+        include $root . '/Components/Header/header.php';
       
       include $root . '/' . $path . '/content.php';
 
-      include $root . '/Components/Footer/footer.php';
+      if (empty($hideFooter))
+        include $root . '/Components/Footer/footer.php';
     ?>
   </body>
 </html>
