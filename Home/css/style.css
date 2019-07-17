@@ -1,4 +1,17 @@
 .carousel-inner img {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 92vh;
+}
+
+.knowledge {
+  display: flex;
+}
+
+.knowledge .item {
+  display: inline-block;
+}
+
+.knowledge .item i {
+  margin-right: 3px;
+  font-size: 86px;
 }

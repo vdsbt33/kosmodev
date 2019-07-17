@@ -1,0 +1,18 @@
+footer {
+  background-color: #00000022;
+  color: #222;
+  padding: 24px 0;
+  border-top: 1px solid #00000010;
+}
+
+footer a {
+  text-decoration: underline;
+  color: #777;
+  break-after: always;
+}
+
+footer ul li {
+  text-decoration: none;
+  list-style: none;
+  margin: 6px 0;
+}

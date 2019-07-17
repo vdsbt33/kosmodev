@@ -1,6 +1,8 @@
 header {
-  background-color: #225;
+  background-color: #000;
   color: #EEE;
+  height: 8vh;
+  min-height: 48px;
 }
 
 header .title {
@@ -10,14 +12,16 @@ header .title {
 }
 
 header nav {
+  height: 100%;
   padding: 0 4px;
   display: flex;
+  align-items: center;
 }
 
 header nav a {
   color: #BB4;
   display: inline-block;
-  margin: 4px 14px;
+  margin: 0 14px;
   font-weight: bold;
   /* background-color: #FFFFFF22; */
 }
@@ -25,4 +29,8 @@ header nav a {
 header nav a:hover {
   color: #BBB;
   text-decoration: none;
+}
+
+.headerSpace {
+  margin-top: 8vh;
 }

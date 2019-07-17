@@ -1,14 +1,8 @@
 <link rel="stylesheet" href="/Components/Header/css/style.css">
-<header>
-  <div class="title">
-    <?php
-    echo $config_data["websiteName"];
-    ?>
-  </div>
-  <nav>
+<div class="headerSpace"> </div>
+<header class="navbar navbar-expand-sm fixed-top">
+  <nav class="">
+    <a href="/Home/">Home</a>
     <a href="/Stuff/">Stuff</a>
-    <a href="/">CSS</a>
-    <a href="/">JavaScript</a>
-    <a href="/">jQuery</a>
   </nav>
 </header>
